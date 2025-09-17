@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="java" class = "org.champ.Java" autowire-candidate="false"/> <!-- if autowire-candidate false, bean will be created but it'll not be considered for injection-->
+    <bean id="sb" class="org.champ.SpringBoot" primary="true" /><!-- primary gives which one to choose from both -->
+    <bean id="telusko" class="org.champ.Telusko" autowire="constructor"><!-- using autowire, it injects automatically
+      "byType" -> Setter Injection(no setter, then NullPointerE), "byName" ->Setter Injection(whatever bean has same name as setter parameter name, it'll take it, no setter, NPE)
+      "constructor" ->Constructor Injection
+      "no" -> manually create using setter/constructor injection -->
+<!-- setter injection(name -> same as setter parameter   <property ref="java" name="course"></property> -->
+<!-- constructor injection       <constructor-arg ref="sb" name="course"/>-->
+    </bean>
+
+</beans>
