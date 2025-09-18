@@ -11,7 +11,7 @@ public class Telusko {
       or setter */
     private ICourse course;
     //setter
-//    @Autowired --> setter injection
+//    @Autowired -->(Auto wired is "byType") setter injection
     public void setCourse(ICourse course){
         System.out.println("Setter Injection");
         this.course=course;
