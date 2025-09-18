@@ -18,7 +18,8 @@ public class Telusko {
     }
     //constructor
 //    @Autowired --> constructor injection
-//    @Qualifier("java") --> overrides Primary, and usually bean name is camelCase(so Java class --> "java" bean)
+/*    @Qualifier("java") --> overrides Primary, can be applied to filed, setter, constructor and
+         the parameter of a constructor(@Qualifier (ICourse course) and usually bean name is camelCase(so Java class --> "java" bean)*/
     public Telusko(ICourse course) {
         System.out.println("Constructor Injection");
         System.out.println("Telusko Bean Created");
